@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+</head>
+<body>
+    
+    <div class="gallery">
+
+        <ul class="controls">
+            <li class="buttons active" data-filter="all">all</li>
+            <li class="buttons" data-filter="ice-cream">ice-cream</li>
+            <li class="buttons" data-filter="chocolate">chocolate</li>
+            <li class="buttons" data-filter="cake">cake</li>
+            <li class="buttons" data-filter="juice">juice</li>
+            <li class="buttons" data-filter="sandwich">sandwich</li>
+        </ul>
+
+        <div class="image-container">
+            <a href="./img/prachi-palwe-qGHw7ffz8JE-unsplash.jpg" class="image ice-cream">
+                <img src="./img/prachi-palwe-qGHw7ffz8JE-unsplash.jpg" alt="">
+            </a>
+            <a href="./img/top-view-food-frame-with-copy-space.jpg" class="image ice-cream">
+                <img src="./img/top-view-food-frame-with-copy-space.jpg" alt="">
+            </a>
+            <a href="./img/umesh-soni-MeGx6pA1zGA-unsplash.jpg" class="image ice-cream">
+                <img src="./img/umesh-soni-MeGx6pA1zGA-unsplash.jpg" alt="">
+            </a>
+
+            <a href="./img/cake.jpg" class="image cake">
+                <img src="./img/cake.jpg" alt="">
+            </a>
+            <a href="./img/cake2.jpg" class="image cake">
+                <img src="./img/cake2.jpg" alt="">
+            </a>
+            <a href="./img/cake3.jpg" class="image cake">
+                <img src="./img/cake3.jpg" alt="">
+            </a>
+            <a href="./img/cake4.jpg" class="image cake">
+                <img src="./img/cake4.jpg" alt="">
+            </a>
+
+            <a href="./img/chocolate.jpg" class="image chocolate">
+                <img src="./img/chocolate.jpg" alt="">
+            </a>
+            <a href="./img/chocolate2.jpg" class="image chocolate">
+                <img src="./img/chocolate2.jpg" alt="">
+            </a>
+
+            <a href="./img/juice.jpg" class="image juice">
+                <img src="./img/juice.jpg" alt="">
+            </a>
+            <a href="./img/juice2.jpg" class="image juice">
+                <img src="./img/juice2.jpg" alt="">
+            </a>
+            <a href="./img/juice3.jpg" class="image juice">
+                <img src="./img/juice3.jpg" alt="">
+            </a>
+
+            <a href="./img/sandwich.jpg" class="image sandwich">
+                <img src="./img/sandwich.jpg" alt="">
+            </a>
+            <a href="./img/sandwich2.jpg" class="image sandwich">
+                <img src="./img/sandwich2.jpg" alt="">
+            </a>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $('.buttons').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+
+                var filter = $(this).attr('data-filter')
+
+                if (filter == 'all'){
+                    $('.image').show(400);
+                }
+                else{
+                    $('.image').not('.'+filter).hide(200);
+                    $('.image').filter('.'+filter).show(400);
+                }
+            })
+
+            $('.gallery').magnificPopup({
+
+                delegate:'a',
+                type:'image',
+                gallery:{
+                    enabled:true
+                }
+
+            })
+
+        })
+    </script>
+
+</body>
+</html>
